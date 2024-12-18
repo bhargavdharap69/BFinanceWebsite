@@ -1,60 +1,67 @@
+/* Reset body margins and padding */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
   background-color: #f0f0f0;
   background-image: url('background.jpg'); /* Add your image path here */
   background-size: cover; /* Ensure the image covers the whole screen */
-  background-position: Cover;
-  color: #ffffff;  /* Set the text color to white for the entire body */
+  background-position: center; /* Center the background image */
+  background-attachment: fixed; /* Keep the image fixed in place */
+  color: #ffffff; /* Set the text color to white for the entire body */
 }
 
+/* Add Literata font for title */
+.main-heading {
+  font-family: 'Literata', serif;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 6rem;
+  color: #ffffff;
+}
+
+/* Other styles remain the same */
 .buttons {
   position: fixed;
   top: 10px;
   right: 10px;
   display: flex;
   gap: 10px;
-  z-index: 1000;  /* Ensure the buttons are above other elements */
+  z-index: 1000;
 }
 
 .buttons a {
   padding: 10px;
-  background-color: transparent;  /* Make background transparent */
-  color: #ffffff;  /* Text color remains white */
+  background-color: transparent;
+  color: #ffffff;
   text-decoration: none;
-  border: 1px solid #ffffff;  /* Add border around the button */
+  border: 1px solid #ffffff;
   border-radius: 5px;
 }
 
 .buttons a:active {
-  background-color: transparent;  /* No background change on click */
-  border: 1px solid #ffffff;  /* Keep the border the same */
-  color: #ffffff;  /* Keep text color unchanged */
-}
-
-.main-heading {
-  text-align: center;
-  margin-top: 100px;
-  font-size: 6rem;
-  color: #ffffff;  /* Text color set to white */
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
 }
 
 .content, .article-content {
   padding: 20px;
   text-align: center;
-  color: #ffffff;  /* Text color set to white */
+  color: #ffffff;
 }
 
-.social-links {
-  margin-top: 20px;
-  font-size: 1.1rem;
-  color: #ffffff;  /* Text color set to white */
+.about-content, .social-links {
+  text-align: center;
+  padding: 10px;
+  max-width: 50%;
+  margin-left: auto;
+  font-size: 1.2rem;
 }
 
 .social-links a {
   margin: 0 10px;
-  color: #ffffff;  /* Text color set to white */
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -66,44 +73,136 @@ body {
 }
 
 .article-box {
-  width: 250px;  /* Adjust width */
-  height: auto;  /* Auto-adjust height */
+  width: 250px;
+  height: auto;
   background-color: transparent;
   margin: 10px;
   text-align: center;
-  display: inline-block;
   padding: 20px;
   border: 2px solid #ffffff;
-  color: #ffffff;  /* Text color set to white */
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.article-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  filter: blur(5px);
+  z-index: -1;
 }
 
 .article-box .intro {
   font-size: 1rem;
-  color: #ffffff;  /* Text color set to white */
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
 .article-box .article-details {
   font-size: 0.8rem;
-  color: #ffffff;  /* Text color set to white */
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
 .article-box a {
   text-decoration: none;
-  color: #ffffff;  /* Text color set to white */
+  color: #ffffff;
   font-size: 1.2rem;
 }
 
 .article-box:hover {
   background-color: transparent;
-  color: #ffffff;  /* Text color changes to black on hover for contrast */
+  color: #ffffff;
 }
 
 .footer {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
+  position: static;
+  bottom: 0;
+  left: 0%;
+  transform: translateX(0%); /* This will center the footer horizontally */
   font-size: 0.8rem;
-  color: #ffffff;  /* Text color set to white */
+  color: #ffffff;
+  text-align: center; /* Ensure the text is centered */
+  padding: 10px;
+}
+
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#searchBox {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+#searchBox::placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+#searchBox:focus {
+  outline: none;
+  border: 1px solid #ffffff;
+}
+
+.sort-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#sortMenu {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#sortMenu a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 5px 0;
+}
+
+#sortMenu a:hover {
+  background-color: #555;
+}
+
+.sort-container button {
+  padding: 10px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.article-content {
+  padding: 40px; /* Increase padding for a spacious layout */
+  margin: 50px auto; /* Add thicker top, bottom, and horizontal margins */
+  max-width: 1000px; /* Limit the width for better readability */
+  background-color: rgba(0, 0, 0, 0.6); /* Add a semi-transparent background */
+  border-radius: 10px; /* Add rounded corners for aesthetics */
+  text-align: left; /* Align text to the left for better flow */
+  color: #ffffff; /* Ensure the text remains white for readability */
+  margin-bottom: 3em; /* Adds space equivalent to 3 lines after each paragraph */
+  
 }
