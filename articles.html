@@ -15,22 +15,36 @@
 
     <h1 class="main-heading">Articles</h1>
 
-    <div class="articles-container">
-        <div class="article-box">
-            <h3>Article 1: Introduction to Investment Banking</h3>
-            <p class="intro">This is a brief introduction to the investment banking we will be covering the main points...</p>
+    <!-- Search Box -->
+    <div class="search-container">
+        <input type="text" id="searchBox" placeholder="Search articles..." onkeyup="searchArticles()">
+    </div>
+
+    <!-- Sort By Menu -->
+    <div class="sort-container">
+        <button onclick="toggleSortMenu()">Sort By</button>
+        <div id="sortMenu" class="sort-menu">
+            <a href="#" onclick="sortArticles('newest')">Newest</a>
+            <a href="#" onclick="sortArticles('oldest')">Oldest</a>
+        </div>
+    </div>
+
+    <div class="articles-container" id="articlesContainer">
+        <div class="article-box" data-title="Purchase Power Parity" data-date="2024-12-16">
+            <h3>What is Purchase Power Parity?</h3>
+            <p class="intro">This article includes information on what is purchase power parity and how it impacts our financial life</p>
             <p class="article-details">Date: December 16, 2024 | Author: Bhargav Dharap</p>
             <a href="../Articles/article1.html">Read more</a>
         </div>
-        <div class="article-box">
-            <h3>Article 2: Introduction to Asset Management</h3>
-            <p class="intro">This is a brief introduction to Asset Management we will be covering the main points...</p>
+        <div class="article-box" data-title="Introduction to Asset Management" data-date="2024-12-17">
+            <h3>Introduction to Asset Management</h3>
+            <p class="intro">This is a brief introduction to Asset Management...</p>
             <p class="article-details">Date: December 17, 2024 | Author: Bhargav Dharap</p>
             <a href="../Articles/article2.html">Read more</a>
         </div>
-        <div class="article-box">
-            <h3>Article 3: Introduction to E-Banking</h3>
-            <p class="intro">This is a brief introduction to e-banking, here I want to haha...</p>
+        <div class="article-box" data-title="Introduction to E-Banking" data-date="2024-12-18">
+            <h3>Introduction to E-Banking</h3>
+            <p class="intro">This is a brief introduction to e-banking...</p>
             <p class="article-details">Date: December 18, 2024 | Author: Bhargav Dharap</p>
             <a href="../Articles/article3.html">Read more</a>
         </div>
